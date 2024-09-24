@@ -1,6 +1,6 @@
 {
   "name": "react-native-tabbedlist",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Native Scrollable Tabbed List.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -47,7 +47,17 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "tabbed",
+    "tabbed list",
+    "sections",
+    "tabbed section list",
+    "scrollview",
+    "flatlist",
+    "sectionlist",
+    "scroll",
+    "feed",
+    "tabs"
   ],
   "repository": {
     "type": "git",
