@@ -39,7 +39,11 @@ export const TabbedList: React.FC<TListProps> = ({
       if (viewableItems.length > 0 && !horizontalPressed && selected) {
         const item = viewableItems[0]?.item;
         if (item && item !== selected) {
-          setSelected(item);
+          if (item.title === 'Tabs') {
+            setSelected(data[0]);
+          } else {
+            setSelected(item);
+          }
           if (horizontalRef.current) {
             horizontalRef.current.scrollToItem({
               animated: true,
@@ -50,7 +54,7 @@ export const TabbedList: React.FC<TListProps> = ({
         }
       }
     },
-    [selected, horizontalPressed]
+    [selected, horizontalPressed, data]
   );
 
   const sectionData = [
@@ -89,7 +93,7 @@ export const TabbedList: React.FC<TListProps> = ({
     );
   };
 
-  const footerStyle = { height: 200 };
+  const footerStyle = { height: 300 };
 
   return (
     <SafeAreaView>

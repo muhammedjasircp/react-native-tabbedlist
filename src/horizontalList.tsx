@@ -1,11 +1,5 @@
 import { memo } from 'react';
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import type { HorizontalListProps } from './types';
 
 const HorizontalList = ({
@@ -58,7 +52,6 @@ const HorizontalList = ({
     <View style={tabsContainerStyle}>
       <FlatList
         bounces={false}
-        contentContainerStyle={styles.contentContainerStyle}
         data={data}
         extraData={selected}
         horizontal
@@ -70,11 +63,5 @@ const HorizontalList = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  contentContainerStyle: {
-    paddingHorizontal: 12,
-  },
-});
 
 export default memo(HorizontalList);
