@@ -1,17 +1,62 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-tabbedlist';
+import { StyleSheet, Text, View } from 'react-native';
+import { TabbedList } from 'react-native-tabbedlist';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
+  const DATA = [
+    {
+      title: 'Fruits',
+      data: ['Apple', 'Banana', 'Orange', 'Grapes'],
+    },
+    {
+      title: 'Vegetables',
+      data: ['Carrot', 'Broccoli', 'Spinach', 'Potato'],
+    },
+    {
+      title: 'Meats',
+      data: ['Chicken', 'Beef', 'Pork', 'Lamb'],
+    },
+    {
+      title: 'Dairy',
+      data: ['Milk', 'Cheese', 'Yogurt', 'Butter'],
+    },
+  ];
 
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const renderListItem = (item: any) => {
+    return (
+      <View style={styles.listItem}>
+        <Text>Hello {item}</Text>
+      </View>
+    );
+  };
+  const renderTabItem = ({
+    item,
+    isSelected,
+  }: {
+    item: any;
+    isSelected: boolean;
+  }) => {
+    return (
+      <View style={[styles.tabItem, isSelected && styles.selected]}>
+        <Text>Tab {item.title}</Text>
+      </View>
+    );
+  };
+  const renderSectionHeader = (item: any) => {
+    return (
+      <View style={styles.header}>
+        <Text>section {item.title}</Text>
+      </View>
+    );
+  };
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <TabbedList
+        data={DATA}
+        renderListItem={renderListItem}
+        renderTabItem={renderTabItem}
+        renderSectionHeader={renderSectionHeader}
+      />
     </View>
   );
 }
@@ -19,12 +64,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  listItem: { height: 100 },
+  tabItem: {
+    width: 200,
+    height: 100,
+    backgroundColor: 'red',
+  },
+  header: {
+    width: '100%',
+    height: 100,
+    backgroundColor: 'yellow',
+  },
+  selected: {
+    backgroundColor: 'green',
   },
 });

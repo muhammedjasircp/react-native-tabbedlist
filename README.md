@@ -10,15 +10,19 @@ npm install react-native-tabbedlist
 
 ## Usage
 
-
 ```js
-import { multiply } from 'react-native-tabbedlist';
+import { TabbedList } from 'react-native-tabbedlist';
 
 // ...
-
-const result = await multiply(3, 7);
+return (
+    <TabbedList
+        data={DATA}
+        renderListItem={renderListItem}
+        renderTabItem={renderTabItem}
+        renderSectionHeader={renderSectionHeader}
+    />;
+)
 ```
-
 
 ## Contributing
 
