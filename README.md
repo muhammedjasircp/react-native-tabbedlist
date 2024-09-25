@@ -2,7 +2,7 @@
 
 React Native Scrollable Tabbed List.
 
-![SimulatorScreenRecording](https://github.com/user-attachments/assets/f63f39a6-2593-4e3f-99fb-b17bcc0c47f1)
+![tabbedList_recording](https://github.com/user-attachments/assets/8d36aee1-96d2-4ec7-af42-a8723555aba1)
 
 
 
