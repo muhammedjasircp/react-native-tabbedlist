@@ -1,8 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, type SectionListData } from 'react-native';
 import { TabbedList } from 'react-native-tabbedlist';
 
+type Data = {
+  title: string;
+  data: string[];
+};
+
 export default function App() {
-  const DATA = [
+  const DATA: Data[] = [
     {
       title: 'Section 1',
       data: ['Item 1-1', 'Item 1-2', 'Item 1-3'],
@@ -65,10 +70,10 @@ export default function App() {
       </View>
     );
   };
-  const renderSectionHeader = (item: any) => {
+  const renderSectionHeader = (section: SectionListData<Data>) => {
     return (
       <View style={styles.sectionHeader}>
-        <Text>{item.title}</Text>
+        <Text>{section.title}</Text>
       </View>
     );
   };
