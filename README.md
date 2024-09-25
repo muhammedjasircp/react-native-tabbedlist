@@ -2,9 +2,7 @@
 
 React Native Scrollable Tabbed List.
 
-![](https://github.com/user-attachments/assets/8d36aee1-96d2-4ec7-af42-a8723555aba1)
-
-
+<img src="https://github.com/user-attachments/assets/8d36aee1-96d2-4ec7-af42-a8723555aba1" width="300"/>
 
 
 ## Installation
