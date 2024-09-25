@@ -2,6 +2,12 @@
 
 React Native Scrollable Tabbed List.
 
+
+https://github.com/user-attachments/assets/4849f1e9-e0de-4a7b-919a-9e3beddc1ac0
+
+
+
+
 ## Installation
 
 ```sh
@@ -14,9 +20,60 @@ npm install react-native-tabbedlist
 import { TabbedList } from 'react-native-tabbedlist';
 
 // ...
+
+ const DATA: Data[] = [
+    {
+      title: 'Section 1',
+      data: ['Item 1-1', 'Item 1-2', 'Item 1-3'],
+    },
+    {
+      title: 'Section 2',
+      data: ['Item 2-1', 'Item 2-2', 'Item 2-3'],
+    }
+ ]
+
+const renderListItem = (item: any) => {
+    return (
+      <View style={styles.listItem}>
+        <Text>{item}</Text>
+      </View>
+    );
+  };
+
+  const renderTabItem = ({
+    item,
+    isSelected,
+  }: {
+    item: any;
+    isSelected: boolean;
+  }) => {
+    return (
+      <View style={styles.tabItem}>
+        <Text style={isSelected && styles.selected}>{item.title}</Text>
+      </View>
+    );
+  };
+
+  const renderSectionHeader = (section: SectionListData<Data>) => {
+    return (
+      <View style={styles.sectionHeader}>
+        <Text>{section.title}</Text>
+      </View>
+    );
+  };
+
+  const listHeader = (
+    <View style={styles.header}>
+      <Text>List Header</Text>
+    </View>
+  );
+
+
+
 return (
     <TabbedList
         data={DATA}
+        listHeader={listHeader}
         renderListItem={renderListItem}
         renderTabItem={renderTabItem}
         renderSectionHeader={renderSectionHeader}
